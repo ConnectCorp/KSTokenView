@@ -109,6 +109,10 @@ public class KSTokenView: UIView {
    //__________________________________________________________________________________
    //
 
+   public var tokenField: KSTokenField {
+       return _tokenField
+   }
+
    /// returns the value of field
    public var text : String {
       get {
