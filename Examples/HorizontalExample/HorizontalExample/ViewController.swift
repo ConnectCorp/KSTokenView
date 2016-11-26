@@ -49,14 +49,14 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: KSTokenViewDelegate {
-   func tokenView(token: KSTokenView, performSearchWithString string: String, completion: ((results: Array<AnyObject>) -> Void)?) {
+   func tokenView(token: KSTokenView, performSearchWithString string: String, completion: ((_ results: Array<AnyObject>) -> Void)?) {
       var data: Array<String> = []
       for value: String in names {
          if value.lowercaseString.rangeOfString(string.lowercaseString) != nil {
             data.append(value)
          }
       }
-      completion!(results: data)
+      completion!(data as Array<AnyObject>)
    }
    
    func tokenView(token: KSTokenView, displayTitleForObject object: AnyObject) -> String {

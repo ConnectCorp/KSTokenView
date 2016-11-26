@@ -54,9 +54,9 @@ class ViewController: UIViewController {
 
 
 extension ViewController: KSTokenViewDelegate {
-   func tokenView(token: KSTokenView, performSearchWithString string: String, completion: ((results: Array<AnyObject>) -> Void)?) {
+   func tokenView(token: KSTokenView, performSearchWithString string: String, completion: ((_ results: Array<AnyObject>) -> Void)?) {
       if (string.characters.isEmpty){
-         completion!(results: names)
+         completion!(names as Array<AnyObject>)
          return
       }
       
@@ -66,7 +66,7 @@ extension ViewController: KSTokenViewDelegate {
             data.append(value)
          }
       }
-      completion!(results: data)
+      completion!(data as Array<AnyObject>)
    }
    
    func tokenView(token: KSTokenView, displayTitleForObject object: AnyObject) -> String {
